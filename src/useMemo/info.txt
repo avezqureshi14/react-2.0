@@ -1,0 +1,30 @@
+Memoized Sum (sumItems):
+
+The sum is recalculated only when the items array changes.
+This is optimized to avoid unnecessary recalculations.
+Non-memoized Sum (sum):
+
+Using useEffect, the sum is recalculated automatically whenever the items array changes.
+This approach ensures the non-memoized sum is always up-to-date without needing to click the "Calculate Sum (No memo)" button.
+How to Observe the Difference:
+Initial Render:
+
+On initial render, both sums are calculated. The console logs "Recalculating... (with memo)" for the memoized calculation and "Calculating.. (no memo)" for the non-memoized calculation inside useEffect.
+Adding Items:
+
+Click "Add Random Number" to update the items state. This triggers a re-render.
+Observe that both sums (sumItems and sum) are updated. The console logs "Recalculating... (with memo)" and "Calculating.. (no memo)" indicating that both calculations are performed.
+Forcing Re-renders:
+
+Click "Re-render" to increment the count state, triggering a re-render without changing the items array.
+Observe that "Recalculating... (with memo)" does not appear because useMemo prevents unnecessary recalculations.
+Similarly, "Calculating.. (no memo)" does not appear since the items array has not changed.
+
+
+In summary, useMemo is primarily for performance optimization to avoid unnecessary calculations, whereas useEffect is for running side effects when dependencies change.
+
+
+
+
+
+

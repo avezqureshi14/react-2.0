@@ -1,0 +1,8 @@
+1. Storing Mutable Values : useRef hook creates a mutable variable which will not re-render our component
+2. Acceessing DOM elements : helps to access the dom elements directlyw
+
+
+//Go through the stopwatch component ones 
+
+useState: Updates trigger re-renders of the component. State updates are asynchronous and may not reflect immediately in console logs within the same function call.
+useRef: Does not trigger re-renders. Updates are synchronous and can be immediately logged within the same function call.
